@@ -1,6 +1,7 @@
 footer {
   background-color: #333333;
   color: #9a9a9a;
+  position: relative;
 }
 footer a {
   color: #9a9a9a;
@@ -80,15 +81,20 @@ footer a.Btop {
   display: block;
   background-color: black;
   position: fixed;
-  bottom: 50px;
-  right: 50px;
+  bottom: calc(234.8px - 35px);
+  right: 60px;
   background-image: url(../img/rarrow.svg);
   background-position: center;
   background-repeat: no-repeat;
   transform: rotate(-90deg);
-  transition: all 1s;
+  /*! transition: all 0.7s; */
   z-index: 3;
+  background-size: 85%;
 }
 footer a.Btop:hover {
   background-color: #1c9ad6;
+}
+.absolute{
+  position: absolute !important;
+  bottom: calc(232px - 35px + 325px) !important;;
 }

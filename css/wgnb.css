@@ -5,37 +5,75 @@ div.wgnb {
   top: 100px;
   width: 100%;
   background-color: rgba(0,0,0,0.5);
+  z-index: 4;
   display: none;
 }
 div.wgnb div.center {
   
-  width: 586px;
+  width: 812px;
   margin: 0 auto;
-  justify-content: space-evenly;
+  /*! justify-content: center; */
   transform: translateX(7px);
 }
 div.wgnb div.center div.wsub {
   
-  width: 92.5px;
   padding: 15px 0;
 }
 div.wgnb div.center div.wsub:not(:last-child){
-  border-right: 1px solid #999;
+  border-right: 1px solid rgba(153,153,153,0.6);
 }
-div.wgnb div.center div.wsub:nth-child(3){  
-  width: 125.8px;
+div.wgnb div.center div.wsub:nth-child(1){  
+  width: 130px;
+  transform: translateX(-25px);
+  padding-right: 5px;
+}
+div.wgnb div.center div.wsub:nth-child(2){  
+  width: 140px;
+  transform: translateX(-26px);
+  padding-right: 0px;
+}
+div.wgnb div.center div.wsub:nth-child(3){
+  transform: translateX(-5px);
+  padding-right: 20px;
+  padding-left: 0px;
+}
+div.wgnb div.center div.wsub:nth-child(4){
+  transform: translateX(-27px);
+  padding-right: 11px;
+  padding-left: 28px;
+}
+div.wgnb div.center div.wsub:nth-child(5){
+  
+  transform: translateX(-27px);
+  padding-right: 2px;
+  padding-left: 3px;
+}
+div.wgnb div.center div.wsub:nth-child(6){
+  
+  transform: translateX(-19px);
 }
 div.wgnb div.center div.wsub h2 {
   
 }
 div.wgnb div.center div.wsub ul {
   
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 div.wgnb div.center div.wsub ul li {
   
+  white-space: nowrap;
+  width: 100%;
 }
 div.wgnb div.center div.wsub ul li a {
   color:#ccc;
-  line-height: 1.8;
+  line-height: 1.4;
   font-size: 15px;
+  padding: 15px 37px;
+  display: inline-block;
+}
+div.wgnb div.center div.wsub ul li a:hover{
+  
+  color: #1c9ad6;
 }

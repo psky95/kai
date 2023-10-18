@@ -33,7 +33,7 @@ section#business div.wrap article:nth-of-type(1)::after {
 section#business div.wrap article:nth-of-type(2) {
   box-sizing: border-box;
   padding: 200px 0;
-  padding-left: 52.5%;
+  padding-left: 45.5%;
 }
 section#business div.wrap article:nth-of-type(2)::before {
   content: "";
@@ -51,12 +51,12 @@ section#business div.wrap article:nth-of-type(2)::before {
 section#business div.wrap article:nth-of-type(2)::after {
   content: "";
   background-image: url(../img/busi3.jpg);
-  width: 900px;
+  width: 700px;
   height: 1000px;
   display: block;
   position: absolute;
-  top: -200px;
-  right: -200px;
+  top: -250px;
+  right: 0;
   background-size: cover;
   background-position: center;
   z-index: 1;

@@ -2,9 +2,17 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://psky95.github.io/kai/">
+    <meta property="og:description" content="한국알콜산업 KAI 홈페이지">
+    <meta property="og:keywords" content="알콜,알코올,주정,알콜산업">
+    <meta property="og:title" content="한국알콜산업 KAI">
+    <meta name="og:image" content="이미지프로필삽입예정"/>
+    <meta name="description" content="한국알콜산업 KAI 홈페이지">
+    <meta name="keywords" content="알콜,알코올,주정,알콜산업">
     <title>한국알콜산업 KAI</title>
-    <link href=" https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.css ">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.css" />
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/header.css">
@@ -19,31 +27,76 @@
     <link rel="stylesheet" href="css/office.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js" type="text/javascript"></script>
-    <script type="text/javascript">
+
+    <!-- 프리텐다드 폰트적용 -->
+    <link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css">
+
+    <!-- 제이쿼리 연결 -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script>
         $(document).ready(function(){
-            $("section#green div.wrap ul li").click(function(){
-                $(this).addClass("current");
-                $(this).siblings().removeClass("current");
-            });
-            // gnb의 li를 클릭하면 실행하시오
             $("header div.wrap nav ul.gnb li").mouseenter(function(){ 
-                $("div.wgnb").slideDown();
+                $("div.wgnb").stop().slideDown();
 
             });
-            // title에 마우스를 올리면 슬라이드 업 > 무엇을? > div.wgnb를
             $("div#title").mouseenter(function(){
-                $("div.wgnb").slideUp();
+                $("div.wgnb").stop().slideUp();
 
+            });
+            function scrollToTop() {
+                $("html, body").animate({ scrollTop: 0 }, "slow");
+            }
+            $("#scrollToTopButton").on("click", scrollToTop);
+        });
+    </script>
+    <!-- 다운 스크롤 -->
+    <script>
+        $(document).ready(function(){
+            $("footer a.Btop").hide();
+            var ws=$(window).scrollTop()
+            var headerY=$("header").offset().top;
+            var headerH=$("header").height();
+            var businessY=$("#business").offset().top-headerY-headerH;
+            var officeY=$("#office .wrap").offset().top + 50 - $(window).height();
+
+            $(window).scroll(function(){
+                // -1 스크롤시 대메뉴 보이게 안보이게    
+                var scrollup = $(window).scrollTop() >= ws;
+        
+                ws=$(window).scrollTop(); // ws에 윈도우 탑값 저장
+               
+                if(ws>headerY){
+                    $("header").addClass("fixed");// 상단메뉴 고정
+                }
+                if(ws>businessY){
+                    $("header").addClass("up");// 상단메뉴 위로 사라짐
+                }
+                if(ws<businessY){ //
+                    $("header").removeClass("up")
+                }
+                if(ws<headerY){ // 
+                    $("header").removeClass("fixed");
+                }
+                // 사이드 탑
+                if(ws>businessY && !scrollup){
+                    $("footer a.Btop").fadeIn();
+                }else if(ws>officeY){
+                    $("footer a.Btop").fadeIn();
+                }else{
+                    $("footer a.Btop").fadeOut();
+                }
+                if(ws>(officeY+234.8)){
+                    $("footer a.Btop").addClass("absolute");
+                }else{
+                    $("footer a.Btop").removeClass("absolute");
+                }
             });
         });
     </script>
+
 </head>
 <body>
-<!------- 상단 ------->
+<!-- 상단 -->
     <header id="top">
         <div class="wrap">
             <nav>
@@ -62,7 +115,7 @@
                         <li><a href="" class="a">ENG</a></li>
                         <li><a href="" class="a">CHN</a></li>
                     </ul>
-                    <form action="" class="search"><button>search</button></form>
+                    <form action="https://www.ka.co.kr/?s=" class="search"><button>search</button></form>
                 </div>
                 <div class="wgnb">
                     <div class="center flex">
@@ -126,20 +179,27 @@
             </nav>
         </div>
     </header>
-<!------- 타이틀 ------->
+<!-- 타이틀 -->
     <div id="title" class="height-full">
         <div class="wrap height-full flex flex-column flex-align-center flex-center">
             <hgroup>
                 <h2 class="h4 text-center">편리하고 행복한 케미칼</h2>
                 <h3 class="h1">Materials for better world</h3>
             </hgroup>
-            <a href="" class="scroll">
+            <!-- <a href="" class="scroll">
                 <span></span><span></span><span></span><span></span>
                 스크롤
-            </a>
+            </a> -->
+        </div>
+        <!-- 스크롤 다운 -->
+        <div class="scroll-downs">
+            <div class="mousey">
+                <div class="scroller"></div>
+            </div>
+            <span class="scrollerspan">scroll down</span>
         </div>
     </div>
-<!------- 메인 ------->
+<!-- 메인 -->
     <main>
         <section id="business">
             <div class="wrap paddingB100">
@@ -233,6 +293,7 @@
             </div>
         </section>
         <section id="recor">
+            <h2 class="hide">recor</h2>
             <div class="wrap flex paddingB50">
                 <article class="recruit">
                     <hgroup>
@@ -259,7 +320,7 @@
                     <a href="">
                         <h3 class="h5">한국알콜산업 2022년 결산보고</h3>
                         <p class="p">제39기 결 산 공 고 연 결 재 무 상 태 표 (2022년 12월 31일 현재) 단위 : 원 자산 Ⅰ. 유동자산 180,686,786,262 1. 현금및현금성자산 38,000,809,812 2. 매출채권및기타채권 84,453,430,406 단기매출채권 82,923,762,895 대손충당금 △1,454,435,762 단기미수금 2,626,274,426 대손충당금 △142,257,000 단기미수수익 235,870,301 선급금 88,565,846 대손충당금 △83,500,000 단기선급비용 259,149,700 3. 재고자산 34,374,402,504 상품 280,946,785 평가충당금 △3,519,720 제품 17,583,560,643 평가충당금 […]</p>
-                        <time>2023.03<span>28</span></time>
+                        <time datetime="2023-03-28">2023.03<span>28</span></time>
                         <span class="morecir">바로가기</span>
                     </a>
                 </article>
@@ -267,6 +328,7 @@
             </div>
         </section>
         <section id="stockir">
+            <h2 class="hide">stockir</h2>
             <div class="wrap padding50 flex">
                 <article class="stock">
                     <h2 class="h5">주가정보</h2>
@@ -319,7 +381,7 @@
             </div>
         </section>
     </main>
-<!------- 하단 ------->
+<!-- 하단 -->
     <footer>
         <div class="wrap padding50">
             <ul class="fnb flex">
@@ -343,7 +405,7 @@
                 </ul>
             </div>
         </div>
-        <a href="#top" class="Btop">맨위로 가기</a>
+        <a href="#top" id="scrollToTopButton" class="Btop">맨위로 가기</a>
     </footer>
 </body>
 </html>

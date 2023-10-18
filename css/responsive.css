@@ -14,8 +14,7 @@
   width: 140px;
   height: 45px;
   }
-  .wrap{
-    
+  .wrap{   
   padding-left: 15px;
   padding-right: 15px;
   }
@@ -34,11 +33,9 @@
   }
   header div.wrap nav h1 a{
     color:white;
-    
     font-size: 16px;
   }
   header div.wrap nav h1 a span{
-    
   background-image: url(../img/logo-white.png);
   width: 32px;
   margin-left: 10px;
@@ -49,147 +46,158 @@
   div.wgnb{
     display: none;
   }
+
   header div.wrap nav > div.flex:nth-of-type(1){   
   display: none;
   }
+
   .ham{
-    
   width: 30px;
   height: 20px;
   border-top: 2px solid;
   border-bottom: 2px solid;
   display: block;
   }
+
   .ham::before{
   display: inline-block;  
   height: 2px;
   transform: translateY(7px);
   }
-/*  타이틀  */
+  /*  타이틀  */
   div#title{   
   min-height: 100%;
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
   }
   div#title div.wrap{
 
   }
   div#title div.wrap hgroup{
   line-height: 1.4;
+  transform: none;
   }
-  div#title div.wrap hgroup h2{
-    
+
+  div#title div.wrap hgroup h2{ 
   font-size: 18px;
   }
+
   div#title div.wrap hgroup h3{
   font-size: 35px;
   }
-  div#title div.wrap a.scroll{
-    
-  bottom: 50px;
-  width: 55px;
+  div#title .scroll-downs {
+  position: absolute;
+  top: 120px;
+  right: 0;
+  bottom: -500px;
+  left: 0;
+  margin: auto;
+  
+  width :34px;
   height: 55px;
   }
-  div#title div.wrap a.scroll::before{
-    
-  height: 20px;
+  div#title .mousey {
+    width: 3px;
+    padding: 10px 15px;
+    height: 35px;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    opacity: 0.75;
+    box-sizing: content-box;
   }
-  div#title div.wrap a.scroll::after{
-    
-  border: 2px solid white;
-  border-top-color: white;
-  border-left-color: white;
-  width: 12px;
-  height: 12px;
-  border-left-color: transparent;
-  border-top-color: transparent;
-  margin-top: -17px;
+  div#title .scroller {
+    width: 3px;
+    height: 10px;
+    border-radius: 25%;
+    background-color: #fff;
+    animation-name: scroll;
+    animation-duration: 1.7s;
+    animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+    animation-iteration-count: infinite;
   }
-  @keyframes updown{
-  0%{ /* 시작 */
-    transform: translateY(0px);
+  div#title .scrollerspan{
+
+    width: 90px;
+    height: 20px;
+    display: inline-block;
+    font-size: 16px;
+    color: rgb(204, 204, 204);
+    left: -20px;
+    position: absolute;
+    top: 70px;
   }
-  50%{
-    transform: translateY(7px);
+  @keyframes scroll {
+    0% { opacity: 0; }
+    10% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(15px); opacity: 0;}
   }
-  100%{ /* 끝  */
-    transform: translateY(0px);
-  }
-}
-@keyframes upddown{
-  0%{ /* 시작 */
-    transform: translateY(0px) rotate(45deg);
-  }
-  50%{
-    transform: translateY(7px) rotate(45deg);
-  }
-  100%{ /* 끝  */
-    transform: translateY(0px) rotate(45deg);
-  }
-}
-/* 메인영역 (비지니스) */
+
+
+  /* 메인영역 (비지니스) */
   .paddingB100{
-    
   padding-bottom: 50px;
   }
+
   section#business div.wrap{
-    
   padding-top: 50px;
   }
+
   section#business div.wrap h2{
-    
   width: 100%;
   font-size: 28px;
   text-align: center;
   font-weight: 300;
+  animation: none !important;
   }
+
   section#business div.wrap article{
-    
   padding: 30px 0;
   display: flex;
   flex-direction: column;
   }
+
   section#business div.wrap article h3{
-    
   order: 2;
   color: black;
   margin-top: 20px;
   font-size: 17px;
   }
+
   section#business div.wrap article h3 span{
-    
   font-weight: lighter;
   margin: 10px 0;
   font-size: 26px;
   }
+
   section#business div.wrap article p{
-    
   order: 3;
   color: #666;
   }
+
   section#business div.wrap article p span{
-    
   display: initial;
   }
+
   section#business div.wrap article a{
-    
   order: 4;
   font-size: 13px;
   align-items: center;
   display: flex;
   justify-content: center;
   }
+
   section#business div.wrap article a:hover::after{
-    
   width: 120%;
   }
+
   section#business div.wrap article:nth-of-type(1)::after{  
-  position: static;
-  order: 1;
-  width: 100%;
-  height: 61.40350877192982vw;
+    position: static;
+    order: 1;
+    width: 100%;
+    height: 61.40350877192982vw;
   }
   section#business div.wrap article:nth-of-type(2){
     width: 100%;
@@ -241,7 +249,7 @@
   section#business div.wrap article:nth-of-type(3) h3, section#business div.wrap article:nth-of-type(3) a, section#business div.wrap article:nth-of-type(3) p{
     color: white;
   }
-/* 그린 카이   */
+  /* 그린 카이   */
   section#green div.wrap{
     
   }
@@ -291,7 +299,7 @@
   height: 20px;
   background-repeat: no-repeat;
   }
-/* 어바웃   */
+  /* 어바웃   */
   section#about div.wrap ul{
     
   flex-direction: column;
@@ -300,9 +308,11 @@
   gap: 30px;
   }
   section#about div.wrap ul li{
-    
   width: 100%;
   margin-bottom: 15px;
+  }
+  section#about div.wrap ul li:nth-child(2){
+    border:none;
   }
   section#about div.wrap ul li figure{
     
@@ -328,7 +338,7 @@
   section#about div.wrap ul li p span{
     
   }
-/*  채용영역  */
+  /*  채용영역  */
   section#recor{
     
   margin-top: auto;
@@ -341,8 +351,7 @@
     width: auto;
   }
   section#recor div.wrap article.recruit{
-    
- 
+    position: relative;
   }
   section#recor div.wrap article.recruit hgroup h2{
     
@@ -384,12 +393,11 @@
   margin-top: 2.631578947368421vw;
   margin-left: 8.771929824561404vw;
   }
+  section#recor div.wrap article.recruit::after{
+    height: 36.926vw !important;
+  }
   section#recor div.wrap article.recruit > :not(hgroup){
     
-  }
-  section#recor div.wrap article.recruit::after{
-    
-  height: calc(100% - 34.64912280701754vw);
   }
   section#recor div.wrap article.corporate hgroup h2{
     gap: 10px;
@@ -403,7 +411,17 @@
   section#recor div.wrap article.corporate hgroup{
     gap: 10px;
   }
-/*  뉴스  */
+  section#recor div.wrap article.corporate a.morecir{
+    border-color: white;
+    position: relative;
+  }
+  section#recor div.wrap article.corporate a.morecir::before{
+    border-top: 1px solid white;
+    border-right: 1px solid white;
+    position: absolute;
+    left: 10px;
+  }
+  /*  뉴스  */
   section#news div.wrap{
     
   padding-top: 20px;
@@ -473,7 +491,7 @@
   width: 17px;
   height: 17px;
   }
-/*  주가정보  */
+  /*  주가정보  */
   section#stockir div.wrap{
     
   flex-direction: column;
@@ -521,10 +539,11 @@
   }
   section#stockir div.wrap article.ir ul li .p{
     color: #9a9a9a;
+    font-size: 14px;
   }
   section#stockir div.wrap article.stock time{
   }
-/*  오피스  */
+  /*  오피스  */
   #office .wrap{
    padding-left: 0;
    padding-right: 0;
@@ -533,17 +552,21 @@
    height: 28.50877192982456vw;
   }
   section#office div.wrap ul li a hgroup h3{
-    font-size: 15px;
+    font-size: 13px;
   }
   section#office div.wrap ul li a hgroup h4{
-    font-size: 15px;
+    font-size: 13px;
+    line-height: 1.6;
   }
   section#office div.wrap ul li a span.arrow{
-    width: 20px;
-    height: 20px;
+    width: 17px;
+    height: 17px;
     background-repeat: no-repeat;
   }
-/*  하단  */
+  section#office div.wrap ul li a hgroup{
+    
+  }
+  /*  하단  */
   footer div.wrap{
     
   display: flex;
@@ -591,7 +614,7 @@
     
   display: flex;
   justify-content: center;
-  gap: 14px;
+  gap: 40px;
   transform: scale(0.8);
   }
   footer div.wrap div.corp ul li{
@@ -600,8 +623,8 @@
   footer div.wrap div.corp ul li:nth-child(2){
     border-right: 1px solid #9a9a9a;
     border-left: 1px solid #9a9a9a;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 22px;
+    padding-right: 22px;
     margin-left: 10px;
     margin-right: 10px;
   }
@@ -610,6 +633,7 @@
     flex-direction: column;
     align-items: center;
     
+    white-space: nowrap;
   }
   footer div.wrap div.corp ul li a::before{
     margin: 0
@@ -630,7 +654,9 @@
     right: 15px;
     background-size: 75%;
   }
-  
+  footer a.Btop:hover{
+    background-color: black;
+  }
 }
 
 @media screen and (max-width:1600px){
@@ -640,8 +666,8 @@
   }
   .paddingT50 {
   padding-top: 3.125vw;
-}
-/* 비지니스 영역   */
+  }
+  /* 비지니스 영역   */
   section#business div.wrap {
     padding-top: 9.375vw;
   }
@@ -657,6 +683,7 @@
   }
   section#business div.wrap article{
     padding: 6.25vw 0;
+    animation: none !important;
   }
   section#business div.wrap article h3 span{
     font-weight: 300;
@@ -685,7 +712,7 @@
   section#business div.wrap article:nth-of-type(2){
     padding-top: 12.5vw;
     padding-bottom: 12.5vw;
-    padding-left: 56.5%;
+    padding-left: 41.5%;
   }
   section#business div.wrap article:nth-of-type(2)::after{
     width: 53.75vw;
@@ -703,15 +730,15 @@
     padding-bottom: 12.5vw;
     padding-left: 40px;
   }
- /*  그린 영역  */
+  /*  그린 영역  */
   section#green div.wrap h2{
     font-weight: 300;
   }
-/* 어바웃 카이 영역   */
+  /* 어바웃 카이 영역   */
   section#about div.wrap ul li p{
     color: #666;
   }
-/* 채용 영역   */
+  /* 채용 영역   */
   section#recor div.wrap article.recruit::before{
     width: 20.1875vw;
     height: 48.0625vw;
@@ -744,7 +771,7 @@
     color: #666;
   }
   section#recor div.wrap article.recruit::after{
-    height: calc(100% - 25.588vw);
+    height: calc(100% - 24.688vw);
     background-color: rgba(255,255,255,0.8);
   }
   section#recor div.wrap article.corporate hgroup h2{
@@ -754,7 +781,7 @@
   section#recor div.wrap article.corporate hgroup h3{
     font-size: 16px;
   }
-/*  주가정보 영역  */
+  /*  주가정보 영역  */
   section#stockir div.wrap article.stock time{
     color: #aaaaaa;
     font-size: 13px;
@@ -767,11 +794,11 @@
     color: #888888;
     font-size: 17px;
   }
-/*  오피스 영역  */
+  /*  오피스 영역  */
   #office .wrap ul{
     height: 20.3125vw;
   }
-/*  푸터 영역  */
+  /*  푸터 영역  */
   footer div.wrap{
     padding-right: 2.5vw;
     padding-left: 2.5vw;
@@ -781,7 +808,7 @@
   }
   footer div.wrap ul.fnb li a{
     color: #aaaaaa;
-    padding-right: 25px;
+    padding: 5px 15px;
   }
   footer div.wrap address{
     font-size: 13px;
@@ -792,9 +819,10 @@
   }
   footer div.wrap p.copyright{
     color: #aaaaaa;
-    font-size: 13px;
+    font-size: 10px;
   }
   .padding50 {
   padding-top: 3.125vw;
   padding-bottom: 3.125vw;
+  }
 }

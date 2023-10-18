@@ -92,6 +92,3 @@ section#green div.wrap a.siteview:hover::after {
 section#green div.wrap a.siteview span {
   position: relative;
 }
-.current{
-  border: 1px solid;
-}

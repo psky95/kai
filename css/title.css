@@ -13,6 +13,7 @@ div#title div.wrap hgroup {
   flex-direction: column;
   align-items: center;
   color: white;
+  transform: translateY(-125px);
 }
 div#title div.wrap hgroup h2 {
   
@@ -138,4 +139,50 @@ div#title div.wrap a.scroll span:nth-child(4){
   animation-delay: 1.5s;
   height: 0;
 }
-
+/* 타이틀 마우스 스크롤 */
+div#title .scroll-downs {
+  position: absolute;
+  top: 120px;
+  right: 0;
+  bottom: -610px;
+  left: 0;
+  margin: auto;
+  
+  width :34px;
+  height: 55px;
+}
+div#title .mousey {
+  width: 3px;
+  padding: 10px 15px;
+  height: 35px;
+  border: 2px solid #fff;
+  border-radius: 25px;
+  opacity: 0.75;
+  box-sizing: content-box;
+}
+div#title .scroller {
+  width: 3px;
+  height: 10px;
+  border-radius: 25%;
+  background-color: #fff;
+  animation-name: scroll;
+  animation-duration: 1.7s;
+  animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+  animation-iteration-count: infinite;
+}
+div#title .scrollerspan{
+  
+  width: 90px;
+  height: 20px;
+  display: inline-block;
+  font-size: 16px;
+  color: rgb(204, 204, 204);
+  left: -20px;
+  position: absolute;
+  top: 70px;
+}
+@keyframes scroll {
+  0% { opacity: 0; }
+  10% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(15px); opacity: 0;}
+}
