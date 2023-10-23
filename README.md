@@ -20,6 +20,7 @@
 - PhotoShop
 - vscode
 - 웹 표준, 웹 접근성
+- 반응형
 
 ## 작업페이지
 - index
